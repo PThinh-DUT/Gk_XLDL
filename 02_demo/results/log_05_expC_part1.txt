@@ -1,0 +1,25 @@
+[C1] posit8_1 K=   16  sai số tương đối trung vị: quire=0.0155 fma=0.0447 sep=0.0487
+[C1] posit8_1 K=   64  sai số tương đối trung vị: quire=0.0120 fma=0.0572 sep=0.0718
+[C1] posit8_1 K=  256  sai số tương đối trung vị: quire=0.0112 fma=0.1083 sep=0.1226
+[C1] posit8_1 K= 1024  sai số tương đối trung vị: quire=0.0135 fma=0.2632 sep=0.2851
+[C1] posit8_1 K= 4096  sai số tương đối trung vị: quire=0.0140 fma=0.5963 sep=0.5864
+[C1] posit8_2 K=   16  sai số tương đối trung vị: quire=0.0224 fma=0.0639 sep=0.0705
+[C1] posit8_2 K=   64  sai số tương đối trung vị: quire=0.0229 fma=0.1085 sep=0.1194
+[C1] posit8_2 K=  256  sai số tương đối trung vị: quire=0.0219 fma=0.1860 sep=0.2285
+[C1] posit8_2 K= 1024  sai số tương đối trung vị: quire=0.0196 fma=0.4519 sep=0.4539
+[C1] posit8_2 K= 4096  sai số tương đối trung vị: quire=0.0207 fma=0.5970 sep=0.6517
+[C1] fp8e4m3 K=   16  sai số tương đối trung vị: quire=0.0208 fma=0.0632 sep=0.0769
+[C1] fp8e4m3 K=   64  sai số tương đối trung vị: quire=0.0238 fma=0.1029 sep=0.1071
+[C1] fp8e4m3 K=  256  sai số tương đối trung vị: quire=0.0208 fma=0.1936 sep=0.2318
+[C1] fp8e4m3 K= 1024  sai số tương đối trung vị: quire=0.0203 fma=0.4276 sep=0.4695
+[C1] fp8e4m3 K= 4096  sai số tương đối trung vị: quire=0.0196 fma=0.5920 sep=0.6435
+[C2] seed=0 int8      w-scale=max  accum=quire acc=90.79% (1s)
+[C2] seed=0 posit16_1 w-scale=none accum=quire acc=90.74% (4s)
+[C2] seed=0 posit16_1 w-scale=none accum=fma   acc=90.76% (136s)
+/Users/dinhphu/Downloads/Workspace/Study_Dut/XLDL/GK_XLDL/02_demo/posit_lab/numformats.py:176: UserWarning: torch.searchsorted(): input value tensor is non-contiguous, this will lower the performance due to extra data copy when converting non-contiguous tensor to contiguous, please use contiguous input value tensor if possible. This message will only appear once per program. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/native/BucketizationUtils.h:34.)
+  idx = torch.bucketize(a, mids, right=False)
+[C2] seed=0 fp8e4m3   w-scale=pow2 accum=quire acc=90.53% (4s)
+[C2] seed=0 fp8e4m3   w-scale=pow2 accum=fma   acc=89.19% (122s)
+[C2] seed=0 fp8e4m3   w-scale=pow2 accum=sep   acc=88.92% (662s)
+[C2] seed=0 posit8_0  w-scale=pow2 accum=quire acc=90.81% (9s)
+[C2] seed=0 posit8_0  w-scale=pow2 accum=fma   acc=88.59% (485s)
