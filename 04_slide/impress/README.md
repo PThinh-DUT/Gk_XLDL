@@ -1,6 +1,6 @@
 # Slide Posit AI bằng impress.js
 
-18 slide tiếng Việt, 16:9, HTML/CSS/JavaScript. Thư viện và ảnh nằm trong thư mục này, không cần npm/Node.js hoặc mạng khi trình chiếu.
+22 slide tiếng Việt, 16:9, HTML/CSS/JavaScript. Thư viện và ảnh nằm trong thư mục này, không cần npm/Node.js hoặc mạng khi trình chiếu.
 
 ## Mở trên localhost
 
@@ -25,7 +25,7 @@ Không cần “import” vào ứng dụng: impress.js chính là thư viện c
 
 ## Chỉnh sửa
 
-- `index.html`: 18 phần tử `<section class="step">`; sửa chữ, nguồn, bảng và `<aside class="notes">` tương ứng. Slide đầu có chỗ điền tên nhóm, giảng viên, lớp.
+- `index.html`: 22 phần tử `<section class="step">`; sửa chữ, nguồn, bảng và `<aside class="notes">` tương ứng. Slide đầu có chỗ điền tên nhóm, giảng viên, lớp.
 - `style.css`: màu sắc, cỡ chữ và bố cục. Canvas 1600×900; tăng/giảm nội dung trước khi giảm cỡ chữ.
 - `deck.js`: nút điều khiển và chế độ đọc/in.
 - `assets/`: ảnh gốc sao chép từ `02_demo/figures`; muốn cập nhật số liệu phải cập nhật bảng, ghi chú và ảnh đồng bộ.
@@ -41,19 +41,30 @@ Tài liệu thư viện: https://github.com/impress/impress.js
 
 ## Phong cách theo PDF tham chiếu
 
-Giao diện được cập nhật theo PDF “Posit Number for  Afficient AI Models.pdf” người dùng cung cấp: nền trắng/xám xanh, navy #1d4060, tiêu đề sans nét vừa và đường kẻ mảnh. Ảnh nền trừu tượng và hai ảnh cầu thang trong assets được trích nguyên từ PDF; không sao chép logo trường, tên tác giả hay ngày giả trong mẫu. Bố cục thích ứng cho 18 slide, không phải bản sao từng trang PDF. Nội dung và bảng số liệu được giữ lại. Biểu đồ giữ màu và nhãn gốc.
+Giao diện được cập nhật theo PDF “Posit Number for  Afficient AI Models.pdf” người dùng cung cấp: nền trắng/xám xanh, navy #1d4060, tiêu đề sans nét vừa và đường kẻ mảnh. Ảnh nền trừu tượng và hai ảnh cầu thang trong assets được trích nguyên từ PDF; không sao chép logo trường, tên tác giả hay ngày giả trong mẫu. Bố cục thích ứng cho 22 slide, không phải bản sao từng trang PDF. Nội dung và bảng số liệu được giữ lại. Biểu đồ giữ màu và nhãn gốc.
 
 ## Mô phỏng và xem kết quả lớn
 
 - Slide 5: chọn mã bit/es, bấm Chạy mô phỏng hoặc Bước tiếp để giải mã sign, regime, exponent, fraction; có ví dụ âm, zero, NaR và biên dải.
-- Slide 6: đổi w và kéo thanh dịch s; tính thật Q(w·2^s)/2^s, cập nhật sai số. Vùng tô trên trục chỉ là vùng minh họa quanh 1, không phải ranh giới độ chính xác cứng.
-- Slide 7: chạy 10 số hạng của ví dụ triệt tiêu; thấy FMA posit8 làm mất 0.125 mỗi bước trong khi bộ cộng dồn rộng giữ lại tổng 1.
-- Slide 9: theo dõi forward → loss → backward → optimizer; chuyển giữa 8-bit và O12L10 để xem độ rộng ở từng giai đoạn. Hoạt họa này không huấn luyện lại mạng.
-- Slide 11: kéo fA/fB để tính PLAM, xét cả hai nhánh t<1/t≥1; sai số là của xấp xỉ phần định trị trước làm tròn posit.
-- Slide 12: ngoài đồ thị lớn còn có mô phỏng XOR → dịch phải 2 bit, hiển thị mã trung gian, kết quả sigmoid và sai số.
-- Slide 12, 14, 15, 16: Đồ thị lớn / Bảng hoặc giải thích. Nhấn ảnh hoặc nút phóng để mở đồ thị lớn; cuộn khi ảnh vượt màn hình, Esc để đóng.
+- Trang 7 (`#slide-06`): đổi w và kéo thanh dịch s; tính thật Q(w·2^s)/2^s, cập nhật sai số. Vùng tô trên trục chỉ là vùng minh họa quanh 1, không phải ranh giới độ chính xác cứng.
+- Trang 9 (`#slide-07`): chạy 10 số hạng của ví dụ triệt tiêu; thấy FMA posit8 làm mất 0.125 mỗi bước trong khi bộ cộng dồn rộng giữ lại tổng 1.
+- Trang 11 (`#slide-09`): theo dõi forward → loss → backward → optimizer; chuyển giữa 8-bit và O12L10 để xem độ rộng ở từng giai đoạn. Hoạt họa này không huấn luyện lại mạng.
+- Trang 14 (`#slide-11`): kéo fA/fB để tính PLAM, xét cả hai nhánh t<1/t≥1; sai số là của xấp xỉ phần định trị trước làm tròn posit.
+- Trang 16 (`#slide-12`): ngoài đồ thị lớn còn có mô phỏng XOR → dịch phải 2 bit, hiển thị mã trung gian, kết quả sigmoid và sai số.
+- Trang 16, 18, 19, 20: Đồ thị lớn / Bảng hoặc giải thích. Nhấn ảnh hoặc nút phóng để mở đồ thị lớn; cuộn khi ảnh vượt màn hình, Esc để đóng.
 - Hoạt họa chỉ chạy khi bấm; tự dừng khi chuyển slide hoặc ẩn tab. Chế độ giảm chuyển động bỏ hiệu ứng trượt và kéo dài thời gian đọc mỗi bước.
 
 `models.js` chứa mô hình số học độc lập với giao diện. `tests/models.test.cjs` đối chiếu 768 mã bit và 522 giá trị làm tròn với bộ mô phỏng Python đã kiểm chứng; kiểm thêm triệt tiêu, các nhánh PLAM và scaling (2 314 kiểm tra tham chiếu/tính chất). Chạy bằng `node tests/models.test.cjs` nếu có Node.js. `tests/reference.json` được sinh từ `posit_lab/numformats.py`, không phải kết quả benchmark mới.
 
 Kiểm thử sigmoid bổ sung: đối chiếu toàn bộ 255 mã hữu hạn posit(8,0), kiểm tra NaR và sai số max trùng kết quả E. Các mô phỏng này không tạo số đo phần cứng mới.
+
+## Bốn mô phỏng đào sâu bổ sung
+
+Bộ trình chiếu hiện có 22 trang. Các hash của 18 trang cũ giữ nguyên, chỉ số trang hiển thị và vị trí đã được cập nhật tự động.
+
+- Trang 6, `#deep-round`: so ngưỡng bit với trung điểm số học; chọn các cặp mã gần minpos/maxpos; di chuyển x, đặt đúng ngưỡng và xem quy tắc chọn mã chẵn.
+- Trang 8, `#deep-es`: so es=0/1/2 trên cùng một x; hiển thị dải log₂, phân chia bit ở mã đã lượng tử hóa và sai số.
+- Trang 12, `#deep-update`: mô phỏng cùng δ=1/256 với trọng số 8-bit và master 12-bit; bản forward 8-bit đổi từ bước9.
+- Trang 15, `#deep-product`: đi qua giải mã → dấu/scale → carry → mã hóa PLAM; có số âm và trường hợp vượt maxpos.
+
+`advanced.js` quản lý các mô phỏng này. Bấm Chạy minh họa hoặc xem từng bước; hoạt họa dừng khi rời slide/ẩn tab. Không có benchmark mới hoặc tuyên bố tái lập RTL được thêm. Kiểm thử số học trong `tests/models.test.cjs` đã mở rộng cho các cơ chế trên.

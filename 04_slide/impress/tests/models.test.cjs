@@ -51,3 +51,24 @@ assert.ok(Math.abs(maxSigmoidError - 0.060664021611295804) < 1e-14);
 assert.equal(M.fastSigmoid(0).approx, 0.5);
 assert.throws(() => M.fastSigmoid(128));
 console.log('PASS: fast sigmoid all 255 finite bit patterns; max error matches experiment E.');
+const r = M.roundingCase(1, 2);
+assert.notEqual(r.threshold, (r.low+r.high)/2);
+assert.equal(M.quantize(r.threshold,8,2),r.high); // lower code odd -> upper even
+assert.equal(M.quantize(M.roundingCase(64,2).threshold,8,2),1); // even lower code
+for (const es of [0,1,2]) {
+ const f = M.formatProbe(.04,es);
+ assert.equal(M.decode(f.bits,8,es).value,f.quantized);
+ assert.equal(f.max,2**((2**es)*6));
+}
+const update = M.optimizerTrace(12);
+assert.equal(update.at(-1).pure,1);
+assert.equal(update.at(-1).master,1-12/256);
+assert.equal(update[7].forward,1);
+assert.equal(update[8].forward,.9375);
+const pp=M.plamProduct(88,88);
+assert.equal(pp.exact,9);
+assert.equal(pp.approx,8);
+assert.equal(pp.carry,1);
+assert.equal(M.plamProduct(168,88).approx,-8);
+assert.equal(M.plamProduct(127,127).roundedApprox,4096);
+console.log('PASS: rounding threshold/parity, es ranges, lost updates, full PLAM exponent/sign/saturation.');

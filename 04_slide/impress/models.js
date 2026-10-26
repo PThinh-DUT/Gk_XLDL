@@ -94,5 +94,45 @@
     const exact = 1 / (1 + Math.exp(-input));
     return { input, bits, xor, code, approx, exact, error: Math.abs(approx-exact) };
   }
-  global.PositDemo = { decode, quantize, scaledQuantize, quireTrace, plam, fastSigmoid };
+  function roundingCase(lower = 64, es = 2) {
+    if (!Number.isInteger(lower) || lower<1 || lower>126) throw new RangeError('Adjacent positive codes required.');
+    const low = decode(lower,8,es).value, high = decode(lower+1,8,es).value;
+    const threshold = decode((lower<<1)|1,9,es).value;
+    return { lower, upper:lower+1, low, high, threshold, arithmeticMidpoint:(low+high)/2,
+      tieCode:(lower&1)?lower+1:lower };
+  }
+  function codeFor(value, es, n=8) {
+    for(let bits=0;bits<2**n;bits++) if(decode(bits,n,es).value===value) return bits;
+    throw new RangeError('Value is not representable.');
+  }
+  function formatProbe(x,es) {
+    const quantized=quantize(x,8,es), bits=codeFor(quantized,es);
+    const max=2**((2**es)*6);
+    return { ...decode(bits,8,es), bits,quantized,max,min:1/max,
+      relativeError:x===0?0:Math.abs(quantized-x)/Math.abs(x) };
+  }
+  function optimizerTrace(steps=12) {
+    let pure=1,master=1;
+    const delta=1/256;
+    return Array.from({length:steps},(_,i)=>{
+      const pureRaw=pure-delta;
+      pure=quantize(pureRaw,8,2);
+      master=quantize(master-delta,12,2);
+      return { step:i+1,delta,pureRaw,pure,master,forward:quantize(master,8,2),ideal:1-(i+1)*delta };
+    });
+  }
+  function plamProduct(bitsA,bitsB,es=1) {
+    const a=decode(bitsA,8,es),b=decode(bitsB,8,es);
+    if(a.special||b.special) throw new RangeError('Nonzero finite posit inputs required.');
+    const p=plam(a.fraction,b.fraction);
+    const scaleA=a.k*2**es+a.exponent,scaleB=b.k*2**es+b.exponent;
+    const scale=scaleA+scaleB+p.carry;
+    const sign=a.sign===b.sign?1:-1;
+    const approx=sign*2**scale*(1+p.normalizedFraction);
+    const exact=a.value*b.value;
+    const roundedApprox=quantize(approx,8,es),roundedExact=quantize(exact,8,es);
+    return {...p,a,b,scaleA,scaleB,scale,sign,approx,exact,roundedApprox,roundedExact,
+      outputCode:codeFor(roundedApprox,es),relativeError:Math.abs(approx-exact)/Math.abs(exact)};
+  }
+  global.PositDemo = { decode, quantize, scaledQuantize, quireTrace, plam, fastSigmoid, roundingCase, formatProbe, optimizerTrace, plamProduct };
 })(globalThis);
