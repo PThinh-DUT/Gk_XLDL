@@ -54,8 +54,8 @@ function chapter7() {
   return [
     H1("Chương 7. Kết luận và hướng phát triển"),
     H2("7.1. Kết luận"),
-    N("**Về lý thuyết:** posit là định dạng có độ chính xác thon dần, dải động rộng, ít ngoại lệ, đi kèm quire. Nhóm đã tự cài đặt bộ mô phỏng posit **khớp 100%** với thư viện chuẩn SoftPosit, kiểm chứng lại dải động công bố trong [18], [43] và công thức sigmoid/tanh nhanh của [40]."),
-    N("**Về bằng chứng:** posit 8-bit (es phù hợp + quire) cho suy luận gần FP32 trên nhiều CNN kể cả ResNet-50/ImageNet; posit 16-bit huấn luyện được như FP32; ưu thế rõ nhất ở ≤ 6 bit; 8-bit thuần không huấn luyện được nếu không có độ chính xác hỗn hợp."),
+    N("**Về lý thuyết:** posit là định dạng có độ chính xác thon dần, dải động rộng, ít ngoại lệ, đi kèm quire. Nhóm đã tự cài đặt bộ mô phỏng posit **không sai khác trên các phép thử đã thực hiện** với thư viện chuẩn SoftPosit, kiểm chứng lại dải động công bố trong [18], [43] và công thức sigmoid/tanh nhanh của [40]."),
+    N("**Về bằng chứng:** posit 8-bit (es phù hợp + quire) cho suy luận gần FP32 trên nhiều CNN kể cả ResNet-50/ImageNet; posit 16-bit huấn luyện được như FP32; ưu thế rõ nhất ở ≤ 6 bit; một số cấu hình 8-bit thuần suy giảm mạnh; mixed precision cải thiện trong các thiết lập đã khảo sát."),
     N("**Về phương pháp tối ưu:** bốn hướng — phần cứng (PLAM, ELMA, quire nhỏ, SIMD), định dạng/lượng tử hóa (co giãn, es theo dữ liệu, Adaptive Posit → ALPS → Logarithmic Posit), tích hợp hệ thống (lưu posit tính FP16, RISC-V), huấn luyện (warm-up, mixed precision, loss scaling)."),
     N("**Về đánh giá khách quan:** posit **chưa phải lời giải thay thế ngay** cho FP16/INT8 trong thực tế vì thiếu phần cứng và chi phí giải mã; giá trị lớn nhất của nó nằm ở **ý tưởng độ chính xác thon dần và cộng dồn chính xác** — các ý tưởng này đang được hấp thụ vào các định dạng lai thế hệ mới [35]."),
     H2("7.2. Hướng phát triển (giai đoạn cuối kỳ)"),

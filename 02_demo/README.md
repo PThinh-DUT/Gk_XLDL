@@ -18,3 +18,17 @@ Dữ liệu Fashion-MNIST gốc (4 file `.gz`, MD5 đã kiểm tra) nằm trong 
 Thư viện dùng chung trong `posit_lab/`: `numformats.py` (posit, minifloat, INT), `quant.py` (co giãn theo lớp),
 `model.py` (LeNet-5), `data.py` (đọc IDX), `plotstyle.py` (bảng màu đồ thị).
 Mọi log chạy nằm trong `results/log_*.txt`.
+
+## Notebook tương tác
+
+Mở [00_BAT_DAU.ipynb](00_BAT_DAU.ipynb) để đọc bảng và hình ngay trong VS Code. Đã có notebook cho toàn bộ 11 script và 6 module thư viện. Xem [hướng dẫn chạy và lưu kết quả](HUONG_DAN_NOTEBOOK.md). Mặc định đọc kết quả đã lưu; bật `RUN_EXPERIMENT` để chạy lại.
+
+## Phạm vi kết luận thực nghiệm
+
+- A–E kiểm tra các đặc tính và xu hướng trên mô phỏng; không tái lập toàn bộ thuật toán của 21 bài báo.
+- D dùng fake quantization: conv/linear và cross-entropy tính FP32; W/A/G, gradient logits, trọng số chính và momentum được làm tròn theo cấu hình. Chưa tương đương thư viện posit/quire ở mức phép toán.
+- D có 6 cấu hình, 10 epoch, chỉ seed 0. FP32 90.66%; FP16 90.58%; posit(16,1) 90.56%; posit(8,0) 10.00%; posit(8,2) 82.40%; O12L10 90.07%. Chưa đủ để kết luận chênh lệch nhỏ có ý nghĩa thống kê.
+- C xấp xỉ quire bằng float64; không phải quire số nguyên chính xác, chưa đo giới hạn dung lượng phần cứng. Phần lớn cấu hình có 3 seed; chế độ sep chỉ seed 0 cho hai định dạng được chọn.
+- Chưa chạy PLAM, CIFAR-10, ResNet, ViT hoặc RTL/FPGA trong A–E. Các số liệu tương ứng trong khảo sát là của bài báo.
+- time_s là thời gian mô phỏng; không dùng để kết luận tốc độ, năng lượng hoặc diện tích phần cứng posit.
+- Bước 0 đối chiếu SoftPosit cho (8,0), (16,1), (8,2), (16,2) và FP8 với PyTorch; 0 sai khác trên bộ thử không bảo đảm mọi cấu hình và mọi phép toán đều đúng.

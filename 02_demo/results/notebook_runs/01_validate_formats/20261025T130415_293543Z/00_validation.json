@@ -1,0 +1,148 @@
+{
+  "decode_posit<8,0>": {
+    "patterns": 256,
+    "mismatches": 0
+  },
+  "decode_posit<16,1>": {
+    "patterns": 65536,
+    "mismatches": 0
+  },
+  "decode_posit<8,2>": {
+    "patterns": 256,
+    "mismatches": 0
+  },
+  "decode_posit<16,2>": {
+    "patterns": 65536,
+    "mismatches": 0
+  },
+  "round_posit<8,0>": {
+    "tests": 20509,
+    "ties_tested": 252,
+    "mismatches": 0
+  },
+  "round_posit<16,1>": {
+    "tests": 151069,
+    "ties_tested": 65532,
+    "mismatches": 0
+  },
+  "round_posit<8,2>": {
+    "tests": 20509,
+    "ties_tested": 252,
+    "mismatches": 0
+  },
+  "round_posit<16,2>": {
+    "tests": 151069,
+    "ties_tested": 65532,
+    "mismatches": 0
+  },
+  "fp8_E4M3_vs_torch": {
+    "tests": 50000,
+    "mismatches": 0
+  },
+  "fp8_E5M2_vs_torch": {
+    "tests": 50000,
+    "mismatches": 0
+  },
+  "format_properties": [
+    {
+      "format": "posit<8,0>",
+      "n": 8,
+      "es": 0,
+      "useed": 2,
+      "maxpos": 64.0,
+      "minpos": 0.015625,
+      "maxpos_formula": 64.0,
+      "dynamic_range_decades": 3.612359947967774,
+      "num_positive_values": 127,
+      "quire_bits_std2022": 128,
+      "quire_bits_legacy": 32
+    },
+    {
+      "format": "posit<8,1>",
+      "n": 8,
+      "es": 1,
+      "useed": 4,
+      "maxpos": 4096.0,
+      "minpos": 0.000244140625,
+      "maxpos_formula": 4096.0,
+      "dynamic_range_decades": 7.224719895935548,
+      "num_positive_values": 127,
+      "quire_bits_std2022": 128,
+      "quire_bits_legacy": 32
+    },
+    {
+      "format": "posit<8,2>",
+      "n": 8,
+      "es": 2,
+      "useed": 16,
+      "maxpos": 16777216.0,
+      "minpos": 5.960464477539063e-08,
+      "maxpos_formula": 16777216.0,
+      "dynamic_range_decades": 14.449439791871097,
+      "num_positive_values": 127,
+      "quire_bits_std2022": 128,
+      "quire_bits_legacy": 32
+    },
+    {
+      "format": "posit<16,1>",
+      "n": 16,
+      "es": 1,
+      "useed": 4,
+      "maxpos": 268435456.0,
+      "minpos": 3.725290298461914e-09,
+      "maxpos_formula": 268435456.0,
+      "dynamic_range_decades": 16.857679757182947,
+      "num_positive_values": 32767,
+      "quire_bits_std2022": 256,
+      "quire_bits_legacy": 128
+    },
+    {
+      "format": "posit<16,2>",
+      "n": 16,
+      "es": 2,
+      "useed": 16,
+      "maxpos": 7.205759403792794e+16,
+      "minpos": 1.3877787807814457e-17,
+      "maxpos_formula": 7.205759403792794e+16,
+      "dynamic_range_decades": 33.71535951436589,
+      "num_positive_values": 32767,
+      "quire_bits_std2022": 256,
+      "quire_bits_legacy": 128
+    },
+    {
+      "format": "FP8 E4M3 (OCP)",
+      "maxpos": 448.0,
+      "minpos": 0.001953125,
+      "dynamic_range_decades": 5.360547974973975,
+      "num_positive_values": 126
+    },
+    {
+      "format": "FP8 E5M2 (OCP)",
+      "maxpos": 57344.0,
+      "minpos": 1.52587890625e-05,
+      "dynamic_range_decades": 9.574967914269711,
+      "num_positive_values": 123
+    },
+    {
+      "format": "FP16 (IEEE half)",
+      "maxpos": 65504.0,
+      "minpos": 5.960464477539063e-08,
+      "dynamic_range_decades": 12.04098771691796,
+      "num_positive_values": 31743
+    },
+    {
+      "format": "BF16",
+      "maxpos": 3.3895313892515355e+38,
+      "minpos": 9.183549615799121e-41,
+      "dynamic_range_decades": 78.5671290834212,
+      "num_positive_values": 32639
+    },
+    {
+      "format": "INT8 (đối xứng)",
+      "maxpos": 127.0,
+      "minpos": 1.0,
+      "dynamic_range_decades": 2.103803720955957,
+      "num_positive_values": 127
+    }
+  ]
+}

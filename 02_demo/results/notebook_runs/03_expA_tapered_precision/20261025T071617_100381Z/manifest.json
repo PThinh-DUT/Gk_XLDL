@@ -1,0 +1,11 @@
+{
+  "source": "03_expA_tapered_precision.py",
+  "mode": "saved_results",
+  "status": "report_exported",
+  "started_utc": "2026-10-25T07:16:17.100597+00:00",
+  "updated_utc": "2026-10-25T07:16:17.103316+00:00",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "argv": [],
+  "source_sha256": "1d3f32a93af7b42b45329db7a7099c3113107e6a5aaec55c6ef3b157da96f364"
+}

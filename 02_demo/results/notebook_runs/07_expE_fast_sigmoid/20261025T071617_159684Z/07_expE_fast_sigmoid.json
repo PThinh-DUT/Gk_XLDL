@@ -1,0 +1,26 @@
+{
+ "posit<8,0> sigmoid": {
+  "num_patterns": 255,
+  "max_abs_err_all": 0.060664021611295804,
+  "max_abs_err_|x|<=8": 0.060664021611295804,
+  "mean_abs_err_|x|<=8": 0.014864892330198717
+ },
+ "posit<16,0> sigmoid": {
+  "num_patterns": 65535,
+  "max_abs_err_all": 0.049000311288352916,
+  "max_abs_err_|x|<=8": 0.049000311288352916,
+  "mean_abs_err_|x|<=8": 0.012546871448034834
+ },
+ "posit<16,0> tanh [40] on [0,8]": {
+  "max_abs_err": 0.09800062257670594,
+  "mean_abs_err": 0.04177133995203215,
+  "max_abs_err_corrected": 0.03788284273999026,
+  "mean_abs_err_corrected": 0.014462007949958196,
+  "paper_reported": {
+   "max": 0.098,
+   "mean": 0.056,
+   "max_corrected": 0.0379,
+   "mean_corrected": 0.0086
+  }
+ }
+}

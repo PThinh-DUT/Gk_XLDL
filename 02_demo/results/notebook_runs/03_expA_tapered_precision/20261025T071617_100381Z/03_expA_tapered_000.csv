@@ -1,0 +1,18 @@
+﻿metric,value
+num_weights,61470
+weight_abs_max,1.506241798400879
+weight_abs_median,0.040164798498153687
+weight_log2_median,-4.6379241943359375
+"weight_frac_in_[2^-6,2^0)",0.7973808361802506
+weight_frac_below_2^-6(=posit8_0 minpos),0.20250528713193428
+weight_frac_below_2^-8,0.050398568407353184
+act_nonzero_frac,0.6495195031166077
+act_abs_median_nonzero,0.8101983666419983
+act_abs_max,23.704843521118164
+int8_step,0.011860171640951803
+weight_frac_below_half_int8_step(-> round to 0),0.0778103139742964
+"peak_decimal_acc posit⟨8,0⟩",2.4660104339770283
+"peak_decimal_acc posit⟨8,1⟩",2.1615197602908407
+"peak_decimal_acc posit⟨8,2⟩",1.8534266747853445
+peak_decimal_acc FP8 E4M3,1.8534266747853445
+peak_decimal_acc INT8 (thang đo theo max|W|),2.765333948227587

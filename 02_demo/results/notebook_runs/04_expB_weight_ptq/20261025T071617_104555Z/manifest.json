@@ -1,0 +1,11 @@
+{
+  "source": "04_expB_weight_ptq.py",
+  "mode": "saved_results",
+  "status": "report_exported",
+  "started_utc": "2026-10-25T07:16:17.104807+00:00",
+  "updated_utc": "2026-10-25T07:16:17.148620+00:00",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "argv": [],
+  "source_sha256": "7eb561db052cad7e9829e601203ed778387e7a8e6b755db0d54b7686d9692e91"
+}

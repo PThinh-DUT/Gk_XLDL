@@ -94,7 +94,7 @@ function chapter1() {
     H2("1.6. Phương pháp thực hiện"),
     B("**Thu thập & đọc kỹ 21 bài báo** (2018–2026): ghi chú theo mẫu thống nhất (bài toán – phương pháp – thiết lập – số liệu kèm trang – hạn chế – dùng cho slide nào)."),
     B("**Ma trận bằng chứng:** mỗi khẳng định trên slide gắn với nguồn và trang (Phụ lục B); **kiểm tra chéo số liệu** — tính lại phần trăm, đối chiếu bảng với văn bản (phát hiện 10+ chỗ mâu thuẫn, Phụ lục A)."),
-    B("**Tự xây bộ mô phỏng posit** bằng Python/PyTorch, **kiểm chứng 100% khớp thư viện chuẩn SoftPosit**, rồi chạy 5 thí nghiệm trên LeNet-5/Fashion-MNIST (Chương 6)."),
+    B("**Tự xây bộ mô phỏng posit** bằng Python/PyTorch, **kiểm chứng với SoftPosit trên các cấu hình và mẫu thử đã chọn**, rồi chạy 5 thí nghiệm trên LeNet-5/Fashion-MNIST (Chương 6)."),
   ];
 }
 
@@ -125,7 +125,7 @@ function chapter2() {
     T([["Thời điểm", "Sự kiện", "Nguồn"],
       ["2015", "Unum Type I: độ dài thay đổi (variable size) → bị phàn nàn vì khó cài đặt phần cứng", "[03] tr.2, [04] tr.2"],
       ["2016", "Unum Type II: kích thước cố định nhưng phải dùng bảng tra → giới hạn độ chính xác", "[03] tr.2"],
-      ["Đầu 2017", "**Type III Unum = Posit** (Gustafson & Yonemoto, *Beating Floating Point at its Own Game*) — thay thế trực tiếp (drop-in) cho IEEE 754, không overflow/underflow, không lãng phí NaN", "[S1]; [05] tr.2"],
+      ["Đầu 2017", "**Type III Unum = Posit** (Gustafson & Yonemoto, *Beating Floating Point at its Own Game*) — định dạng thay thế được đề xuất; cần thư viện hoặc phần cứng hỗ trợ, có hành vi ngoại lệ và làm tròn khác IEEE 754", "[S1]; [05] tr.2"],
       ["2018", "Các bài đầu tiên đưa posit vào DNN: lưu trọng số [01], log-float + quire của Facebook [43]; Posit Standard bản nháp 3.2", "[01], [43], [11] (TLTK)"],
       ["2019", "Phần cứng FPGA: Deep Positron (EMAC) [03], [04]; huấn luyện đầu tiên [05], [06]; ImageNet 16-bit [08]; hội nghị CoNGA", "[03]–[08]"],
       ["2020–2021", "Định dạng thích ứng [33], [12]; mixed precision PositNN [11]; PLAM [36]; RISC-V [21], [44]; GAN [40]; độ bền [46]", "các bài tương ứng"],
@@ -194,9 +194,9 @@ function chapter2() {
     ]),
     P("Bảng 2 của [42] tr.5 (dữ liệu của Gustafson) cho cùng kết luận ở dạng số bit: 8-bit posit đạt tối đa **6 bit** chính xác (float 8-bit: 5 bit) và posit ≥ float trong vùng **1/4 … 4**; 16-bit: 13 vs 11 bit, vùng 1/64 … 64; 32-bit: 28 vs 24 bit, vùng 10^{−6} … 10^{6}."),
     H2("2.6. Làm tròn, so sánh và các ngoại lệ"),
-    B("**Một chế độ làm tròn duy nhất:** round-to-nearest-even trên chuỗi bit [36] tr.3. ⚠ Lưu ý tinh tế (nhóm phát hiện khi cài đặt): điểm \"giữa\" để làm tròn là trung điểm **trên không gian bit**, tức giá trị của posit⟨n+1, es⟩ có mẫu bit (p<<1)|1 — **không phải** trung bình cộng hai giá trị khi phải cắt bit mũ. Cài đặt theo cách này cho kết quả **trùng khớp 100%** với SoftPosit (Mục 6.2)."),
+    B("**Một chế độ làm tròn duy nhất:** round-to-nearest-even trên chuỗi bit [36] tr.3. ⚠ Lưu ý tinh tế (nhóm phát hiện khi cài đặt): điểm \"giữa\" để làm tròn là trung điểm **trên không gian bit**, tức giá trị của posit⟨n+1, es⟩ có mẫu bit (p<<1)|1 — **không phải** trung bình cộng hai giá trị khi phải cắt bit mũ. Cài đặt theo cách này cho kết quả **không sai khác trên bộ kiểm chứng đã chạy** với SoftPosit (Mục 6.2)."),
     B("**So sánh hai posit dùng chung mạch so sánh số nguyên** (vì thứ tự mẫu bit bù hai trùng thứ tự giá trị) → max-pooling, ReLU rất rẻ [05] tr.8."),
-    B("**Không underflow:** số khác 0 không bao giờ làm tròn về 0. Ưu điểm: không mất thông tin nhỏ. Nhược điểm: gradient cực nhỏ bị \"phóng to\" lên minpos — [05] tr.9 cho rằng đây là nguyên nhân posit 8/10-bit hội tụ bất thường khi huấn luyện (Thí nghiệm D)."),
+    B("**Không underflow:** số khác 0 không bao giờ làm tròn về 0. Điều này tránh làm tròn trực tiếp về 0 nhưng không bảo toàn độ lớn của các giá trị dưới minpos. Nhược điểm: gradient cực nhỏ bị \"phóng to\" lên minpos — [05] tr.9 cho rằng đây là nguyên nhân posit 8/10-bit hội tụ bất thường khi huấn luyện (Thí nghiệm D)."),
     B("**Độ bền với lỗi lật bit:** với posit⟨32,2⟩, lật 1 bit làm sai lệch ít hơn float32 trong **> 95%** trường hợp; posit ra NaR chỉ ~0.7×10^{−6} %, float ra NaN > 4% [46] tr.4."),
     H2("2.7. Quire – bộ cộng dồn chính xác"),
     P("Tích vô hướng y = Σ a_{i}b_{i} là phép toán chiếm đa số trong DNN (một lớp conv 3×3 với 512 kênh của ResNet-50 cộng **4 608** tích [43] tr.3). Có hai cách cộng:"),

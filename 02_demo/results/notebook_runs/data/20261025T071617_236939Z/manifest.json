@@ -1,0 +1,11 @@
+{
+  "source": "posit_lab/data.py",
+  "mode": "saved_results",
+  "status": "report_exported",
+  "started_utc": "2026-10-25T07:16:17.237120+00:00",
+  "updated_utc": "2026-10-25T07:16:17.237570+00:00",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "argv": [],
+  "source_sha256": "7abf927a3bba0f83d3f3de095b6812608e5ea0596fab91671e9012d6f1db6e0e"
+}

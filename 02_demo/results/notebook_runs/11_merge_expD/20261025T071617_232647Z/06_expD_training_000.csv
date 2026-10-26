@@ -1,0 +1,7 @@
+﻿config,seed,final_acc
+FP32,0,90.66
+FP16 thuần,0,90.58
+"Posit(16,1) thuần",0,90.56
+"Posit(8,0) thuần",0,10.0
+"Posit(8,2) thuần",0,82.4
+"Posit(8,2)* hỗn hợp (O12L10)",0,90.07

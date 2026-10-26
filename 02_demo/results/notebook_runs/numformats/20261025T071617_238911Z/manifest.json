@@ -1,0 +1,11 @@
+{
+  "source": "posit_lab/numformats.py",
+  "mode": "saved_results",
+  "status": "report_exported",
+  "started_utc": "2026-10-25T07:16:17.239111+00:00",
+  "updated_utc": "2026-10-25T07:16:17.241030+00:00",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "argv": [],
+  "source_sha256": "b278cdb72e96d85e06f8a2b1bae635c16e05eea96bf48c4024bd91711d44b77b"
+}

@@ -1,0 +1,11 @@
+{
+  "source": "10_slide_figures.py",
+  "mode": "saved_results",
+  "status": "report_exported",
+  "started_utc": "2026-10-25T07:16:17.230569+00:00",
+  "updated_utc": "2026-10-25T07:16:17.232162+00:00",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "argv": [],
+  "source_sha256": "834bd569d63256fc966e9db354b5e534febf21d950d908c6a1e2b105974ce643"
+}

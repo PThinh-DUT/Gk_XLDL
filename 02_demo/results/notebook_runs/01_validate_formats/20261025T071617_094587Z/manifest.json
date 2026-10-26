@@ -1,0 +1,11 @@
+{
+  "source": "01_validate_formats.py",
+  "mode": "saved_results",
+  "status": "report_exported",
+  "started_utc": "2026-10-25T07:16:17.094911+00:00",
+  "updated_utc": "2026-10-25T07:16:17.097818+00:00",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "argv": [],
+  "source_sha256": "bb7c5a95042c6c1229ca863dda131b4541500948d8bb538d8119d3a5c7e57564"
+}

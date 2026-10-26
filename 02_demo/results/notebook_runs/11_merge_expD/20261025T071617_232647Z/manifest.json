@@ -1,0 +1,11 @@
+{
+  "source": "11_merge_expD.py",
+  "mode": "saved_results",
+  "status": "report_exported",
+  "started_utc": "2026-10-25T07:16:17.232829+00:00",
+  "updated_utc": "2026-10-25T07:16:17.235756+00:00",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "argv": [],
+  "source_sha256": "2ab87f3a7bca8eb40898d9e92aa7da7b7c495cc5302daf469eceb72cdea25bc5"
+}

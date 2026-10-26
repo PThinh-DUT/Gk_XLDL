@@ -1,0 +1,11 @@
+{
+  "source": "07_expE_fast_sigmoid.py",
+  "mode": "saved_results",
+  "status": "report_exported",
+  "started_utc": "2026-10-25T07:16:17.159905+00:00",
+  "updated_utc": "2026-10-25T07:16:17.162503+00:00",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "argv": [],
+  "source_sha256": "0a96c46d64aceef1c533aa4ca96fa327a6708afb9633b4667292e42d30dd32e3"
+}

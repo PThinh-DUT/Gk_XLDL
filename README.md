@@ -14,6 +14,13 @@
 | `03_bao_cao_word/_build/` | Script Node.js (thư viện `docx`) để dựng lại 2 file Word từ số liệu mới nhất |
 | `04_slide/Slide_Posit_AI_hieu_nang_cao.pdf` | **Bản PDF của bộ slide** (26 trang 16:9) — bản gốc chỉnh sửa được nằm trên trang deck (link trong chat); cần .pptx thì dùng nút Export của deck |
 
+
+## Nội dung hiệu chỉnh để làm slide
+
+Dùng `04_slide/Dan_y_slide_da_hieu_chinh.md` làm nội dung chốt (18 slide). Bản này sửa nguồn dẫn, điều kiện so sánh, mô tả mô phỏng và giới hạn kết luận. Các nguồn JavaScript trong `03_bao_cao_word/_build` và README thực nghiệm đã được cập nhật tương ứng.
+
+**Chưa đồng bộ bản xuất:** các file Word và PDF slide hiện có được tạo trước lần hiệu chỉnh này; không coi chúng là bản mới nhất. Cần dựng lại Word từ nguồn và cập nhật/xuất lại slide, sau đó kiểm tra bố cục trong Word/Impress. Môi trường phiên hiệu chỉnh chưa có Node.js và LibreOffice để thực hiện bước xuất và kiểm tra. Bản sườn gốc của nhóm được giữ nguyên.
+
 ## Quy ước trích dẫn
 - `[NN]` = số đầu tên file trong `papers_download/`; `tr.X` = trang thứ X của file PDF.
 - `[S1]` Gustafson & Yonemoto 2017, `[S2]` Posit Standard 2022 — **chưa có trong thư mục**, nên tải thêm để đối chiếu.

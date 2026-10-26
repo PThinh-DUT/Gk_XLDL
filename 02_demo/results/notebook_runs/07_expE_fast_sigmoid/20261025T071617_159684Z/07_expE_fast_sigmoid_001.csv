@@ -1,0 +1,5 @@
+﻿metric,value
+num_patterns,65535
+max_abs_err_all,0.049000311288352916
+max_abs_err_|x|<=8,0.049000311288352916
+mean_abs_err_|x|<=8,0.012546871448034834

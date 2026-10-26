@@ -1,0 +1,13 @@
+{
+  "source": "06_expD_lowprec_training.py",
+  "mode": "saved_results",
+  "status": "report_exported",
+  "started_utc": "2026-10-25T07:16:17.154474+00:00",
+  "updated_utc": "2026-10-25T07:16:17.159039+00:00",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "argv": [
+    "0"
+  ],
+  "source_sha256": "daa6ed0883241ca584ab6b38b03e69a3ae717a805b2dd197a9cb70652a06f420"
+}
